@@ -56,6 +56,7 @@ define(function (require, exports, module) {
         "Long",
         "Short",
         "String",
+        "string",
         "Character",
         "java.lang.Byte",
         "java.lang.Double",
@@ -485,7 +486,7 @@ define(function (require, exports, module) {
      * @return {string} Visibility constants for UML Elements
      */
     JavaCodeAnalyzer.prototype._getVisibility = function (modifiers) {
-        if (_.contains(modifiers, "public")) {
+        if (_.contains(modifiers, "public") || _.contains(modifiers, "global")) {
             return UML.VK_PUBLIC;
         } else if (_.contains(modifiers, "protected")) {
             return UML.VK_PROTECTED;
